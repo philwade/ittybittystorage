@@ -5,7 +5,9 @@ defmodule Ittybitty.BitController do
     case Ittybitty.Redix.get_key(id) do
       {:ok, value} ->
         json conn, %{value: value}
-      _ -> text conn, "error"
+      {:notfound} ->
+            put_status(conn, 404)
+            |> render(Ittybitty.ErrorView, "404.json")
     end
   end
 end

@@ -20,7 +20,9 @@ defmodule Ittybitty.Router do
   end
 
   # Other scopes may use custom stacks.
-  # scope "/api", Ittybitty do
-  #   pipe_through :api
-  # end
+   scope "/api", Ittybitty, as: :api do
+     pipe_through :api
+
+	 resources "/bit", BitController, only: [:show, :create, :update, :delete]
+   end
 end

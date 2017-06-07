@@ -12,11 +12,13 @@ apt-get install -y git curl
 
 wget https://packages.erlang-solutions.com/erlang-solutions_1.0_all.deb && sudo dpkg -i erlang-solutions_1.0_all.deb
 curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
+sudo add-apt-repository -y ppa:chris-lea/redis-server
 
 apt-get update
 apt-get install -y esl-erlang
 apt-get install -y elixir
 apt-get install -y postgresql
+apt-get install -y redis-server
 
 sudo apt-get install -y nodejs
 
