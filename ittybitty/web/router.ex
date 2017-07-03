@@ -17,12 +17,14 @@ defmodule Ittybitty.Router do
     pipe_through :browser # Use the default browser stack
 
     get "/", PageController, :index
+    #get "newbit", BitController, :verify
+    get "newbit", BitController, :new
   end
 
   # Other scopes may use custom stacks.
    scope "/api", Ittybitty, as: :api do
      pipe_through :api
 
-	 resources "/bit", BitController, only: [:show, :create, :update, :delete]
+	 resources "/bit", BitController, only: [:show, :update, :delete]
    end
 end

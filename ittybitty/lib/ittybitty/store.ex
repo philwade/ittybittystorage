@@ -1,4 +1,4 @@
-defmodule Ittybitty.Redix do
+defmodule Ittybitty.Store do
   @setbit 0
   @valuebit 1
 
@@ -23,5 +23,13 @@ defmodule Ittybitty.Redix do
 
   defp update_key_value(key, value) do
     Redix.command(:redix, ["SETBIT", key, @valuebit, value])
+  end
+
+  def create_key(key) do
+    Redix.pipeline(:redix, [["SETBIT", key, @setbit, 1], ["SETBIT", key, @valuebit, 1]])
+  end
+
+  def generate_key do
+    UUID.uuid4()
   end
 end
