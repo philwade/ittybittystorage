@@ -14,7 +14,7 @@ defmodule Ittybitty do
       supervisor(Ittybitty.Endpoint, []),
       # Start your own worker by calling: Ittybitty.Worker.start_link(arg1, arg2, arg3)
       # worker(Ittybitty.Worker, [arg1, arg2, arg3]),
-      worker(Redix, [[], [name: :redix]]),
+      worker(Redix, [[host: "redis"], [name: :redix]]), # TODO: configure this host properly
     ]
 
     # See http://elixir-lang.org/docs/stable/elixir/Supervisor.html

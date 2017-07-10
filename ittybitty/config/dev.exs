@@ -36,8 +36,8 @@ config :phoenix, :stacktrace_depth, 20
 # Configure your database
 config :ittybitty, Ittybitty.Repo,
   adapter: Ecto.Adapters.Postgres,
-  username: "postgres",
+  username: "ittybitty",
   password: "password",
   database: "ittybitty_dev",
-  hostname: "localhost",
+  hostname: "db",
   pool_size: 10
