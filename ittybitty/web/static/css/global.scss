@@ -61,3 +61,17 @@ a {
 	color: #000;
 }
 
+code {
+	background-color: gray;
+	border: 1px solid black;
+	border-radius: 10px;
+	padding: 13px;
+}
+
+.pre {
+	font-family: monospace;
+	background-color: gray;
+	border: 1px solid black;
+	border-radius: 6px;
+	padding: 3px;
+}

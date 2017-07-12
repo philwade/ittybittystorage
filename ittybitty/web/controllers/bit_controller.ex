@@ -28,7 +28,7 @@ defmodule Ittybitty.BitController do
         case Ittybitty.Store.create_key(key) do
           {:ok, _} ->
             render conn, "verify.html", key: key
-          {:error, msg} ->
+          {:error, _msg} ->
             put_status(conn, 500)
             |> render(Ittybitty.ErrorView, "500.html")
         end

@@ -1,7 +1,12 @@
 <div class="main-layout">
   <div class="content">
     <h3>Here you go!</h3>
-    <p>We just need to verify that you're a human before we had you over your key</p>
+    <p>This is the key to your bit. It has been initialized to the value <i class="pre">0</i>.</p>
+    <code>
     <%= @key %>
+    </code>
+    <p>You can read your bit with a GET request to <i class="pre">/api/bit/<%= @key %></i>, and update its value with a PUT request.</p>
+    <p>Please note there is <b>no security</b> around updating this bit, so please keep the value secret if that is important to your usage. If accounts/locking/access control are things that you would like to see, please let me know over at the <a href="/contact">contact</a> page.</p>
+    <p>For more details on how to use your bit, please review the <a href="/documentation">documentation</a>.</p>
   </div>
 </div>
