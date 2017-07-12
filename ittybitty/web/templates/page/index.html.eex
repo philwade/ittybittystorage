@@ -1,36 +1,20 @@
-<div class="jumbotron">
-  <h2><%= gettext "Welcome to %{name}", name: "Phoenix!" %></h2>
-  <p class="lead">A productive web framework that<br />does not compromise speed and maintainability.</p>
-</div>
-
-<div class="row marketing">
-  <div class="col-lg-6">
-    <h4>Resources</h4>
-    <ul>
-      <li>
-        <a href="http://phoenixframework.org/docs/overview">Guides</a>
-      </li>
-      <li>
-        <a href="https://hexdocs.pm/phoenix">Docs</a>
-      </li>
-      <li>
-        <a href="https://github.com/phoenixframework/phoenix">Source</a>
-      </li>
-    </ul>
+<div class="home-layout">
+  <div class="jumbotron">
+    <h2>Itty, Bitty, Storage</h2>
+    <h3>A service for when you just need a "bit" of storage</h3>
+    <p class="lead">Have you ever needed to store so very little data that it wasn't worth spinning up a database? Then I've got good news for you.</p>
+    <p>Ittybittystorage is a <a href="https://en.wikipedia.org/wiki/Software_as_a_service">SaaS</a> for storing and modifying a single <a href="https://en.wikipedia.org/wiki/Bit">bit</a> of data. I'll let you decide what sort of fun uses this might have.</p>
+    <p>If you're still reading (thanks!), I imagine you are probably interested in one of two things:</p>
+    <div class="action">
+      <a class="button" alt="request a bit" href="/bit">I want my bit!</a>
+    </div>
+    <div class="action">
+      <a class="button" alt="bit documentaion" href="/documentation">I need some documentation on using my bit!</a>
+    </div>
   </div>
-
-  <div class="col-lg-6">
-    <h4>Help</h4>
-    <ul>
-      <li>
-        <a href="http://groups.google.com/group/phoenix-talk">Mailing list</a>
-      </li>
-      <li>
-        <a href="http://webchat.freenode.net/?channels=elixir-lang">#elixir-lang on freenode IRC</a>
-      </li>
-      <li>
-        <a href="https://twitter.com/elixirphoenix">@elixirphoenix</a>
-      </li>
-    </ul>
+  <div class="sidebar">
+    <div class="counter">
+      Current bits: 100
+    </div>
   </div>
 </div>

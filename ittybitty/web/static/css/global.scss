@@ -1,0 +1,22 @@
+@import 'variables';
+
+body {
+	background-color: $color-background;
+	font-family: $font-main;
+}
+
+a {
+	color: $color-link;
+}
+
+.button {
+	background-color: #fff;
+	border: 1px solid gray;
+	border-radius: 7px;
+	color: black;
+	font-family: $font-main;
+	font-size: 16px;
+	padding: 10px;
+	text-decoration: none;
+}
+

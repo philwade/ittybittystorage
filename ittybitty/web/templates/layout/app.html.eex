@@ -7,19 +7,21 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Hello Ittybitty!</title>
-    <link rel="stylesheet" href="<%= static_path(@conn, "/css/app.css") %>">
+    <title>Itty, bitty, storage</title>
+    <link href="https://fonts.googleapis.com/css?family=Raleway:400,400i,700,700i" rel="stylesheet">
+    <script src="https://use.fontawesome.com/a28f3c3399.js"></script>
+    <link rel="stylesheet" href="<%= static_path(@conn, "/css/app.css?123") %>">
   </head>
 
   <body>
     <div class="container">
       <header class="header">
         <nav role="navigation">
-          <ul class="nav nav-pills pull-right">
-            <li><a href="http://www.phoenixframework.org/docs">Get Started</a></li>
+          <ul class="nav">
+            <li>Documentation</li>
+            <li>About</li>
           </ul>
         </nav>
-        <span class="logo"></span>
       </header>
 
       <p class="alert alert-info" role="alert"><%= get_flash(@conn, :info) %></p>
