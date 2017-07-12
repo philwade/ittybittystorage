@@ -18,5 +18,46 @@ a {
 	font-size: 16px;
 	padding: 10px;
 	text-decoration: none;
+
+	.fa {
+		margin-right: 5px;
+	}
+}
+
+.main-layout {
+	display: grid;
+	grid-template-columns: 65% 25%;
+	grid-column-gap: 10px;
+	padding: 20px;
+
+	.content {
+		background-color: $color-primary;
+		border-radius: 10px;
+		color: #fff;
+		padding: 20px;
+
+		h2 {
+			font-size: 40px;
+		}
+
+		.action {
+			padding: 15px;
+		}
+	}
+
+	.counter {
+		background-color: $color-dark;
+		border-radius: 5px;
+		color: #fff;
+		font-size: 20px;
+		padding: 20px 40px;
+	}
+
+}
+
+.error {
+	font-size: 25px;
+	font-style: italic;
+	color: #000;
 }
 

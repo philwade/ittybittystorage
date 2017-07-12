@@ -1,15 +1,15 @@
-<div class="home-layout">
-  <div class="jumbotron">
+<div class="main-layout">
+  <div class="content">
     <h2>Itty, Bitty, Storage</h2>
     <h3>A service for when you just need a "bit" of storage</h3>
     <p class="lead">Have you ever needed to store so very little data that it wasn't worth spinning up a database? Then I've got good news for you.</p>
     <p>Ittybittystorage is a <a href="https://en.wikipedia.org/wiki/Software_as_a_service">SaaS</a> for storing and modifying a single <a href="https://en.wikipedia.org/wiki/Bit">bit</a> of data. I'll let you decide what sort of fun uses this might have.</p>
     <p>If you're still reading (thanks!), I imagine you are probably interested in one of two things:</p>
     <div class="action">
-      <a class="button" alt="request a bit" href="/bit">I want my bit!</a>
+      <a class="button" alt="request a bit" href="/newbit"><i class="fa fa-hand-o-up" aria-hidden="true"></i>I want my bit!</a>
     </div>
     <div class="action">
-      <a class="button" alt="bit documentaion" href="/documentation">I need some documentation on using my bit!</a>
+      <a class="button" alt="bit documentaion" href="/documentation"><i class="fa fa-info-circle" aria-hidden="true"></i>I need some documentation on using my bit!</a>
     </div>
   </div>
   <div class="sidebar">

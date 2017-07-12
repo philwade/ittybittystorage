@@ -1,1 +1,16 @@
-<%= @key %>
+<div class="main-layout">
+  <div class="content">
+    <%= if @errors do %>
+      <div class="error">
+        Sorry, something has gone wrong.
+      </div>
+    <% end %>
+    <h3>Almost there</h3>
+    <p>We just need to verify that you're a human before we hand over your key</p>
+    <form name="getbit" method="post" action="/newbit">
+      <%= raw Recaptcha.Template.display %>
+      <input type="hidden" name="_csrf_token" value="<%= get_csrf_token() %>">
+      <input class="button" type="submit" value="Ok, let's go">
+    </form>
+  </div>
+</div>

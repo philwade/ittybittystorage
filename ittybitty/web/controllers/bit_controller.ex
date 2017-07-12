@@ -21,17 +21,23 @@ defmodule Ittybitty.BitController do
     end
   end
 
-  def verify(conn, _params) do
+  def verify(conn, params) do
+    case Recaptcha.verify(params["g-recaptcha-response"]) do
+      {:ok, _} ->
+        key = Ittybitty.Store.generate_key()
+        case Ittybitty.Store.create_key(key) do
+          {:ok, _} ->
+            render conn, "verify.html", key: key
+          {:error, msg} ->
+            put_status(conn, 500)
+            |> render(Ittybitty.ErrorView, "500.html")
+        end
+      {:error, errors} ->
+        render conn, "new.html", errors: errors
+    end
   end
 
   def new(conn, _params) do
-    key = Ittybitty.Store.generate_key()
-    case Ittybitty.Store.create_key(key) do
-      {:ok, _} ->
-        render conn, "new.html", key: key
-      {:error, msg} ->
-        put_status(conn, 500)
-        |> render(Ittybitty.ErrorView, "500.html")
-    end
+    render conn, "new.html", errors: nil
   end
 end

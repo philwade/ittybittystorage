@@ -1,0 +1,7 @@
+<div class="main-layout">
+  <div class="content">
+    <h3>Here you go!</h3>
+    <p>We just need to verify that you're a human before we had you over your key</p>
+    <%= @key %>
+  </div>
+</div>

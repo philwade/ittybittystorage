@@ -19,7 +19,7 @@ defmodule Ittybitty.Mixfile do
   def application do
     [mod: {Ittybitty, []},
      applications: [:phoenix, :phoenix_pubsub, :phoenix_html, :cowboy, :logger, :gettext,
-                    :phoenix_ecto, :postgrex, :redix]]
+                    :phoenix_ecto, :postgrex, :redix, :recaptcha]]
   end
 
   # Specifies which paths to compile per environment.
@@ -39,6 +39,7 @@ defmodule Ittybitty.Mixfile do
      {:gettext, "~> 0.11"},
      {:cowboy, "~> 1.0"},
      {:redix, ">= 0.0.0"},
+     {:recaptcha, "~> 2.0"},
      {:uuid, "~> 1.1"}]
   end
 

@@ -41,3 +41,8 @@ config :ittybitty, Ittybitty.Repo,
   database: "ittybitty_dev",
   hostname: "localhost",
   pool_size: 10
+
+# configure recaptcha
+config :recaptcha,
+  public_key: {:system, "RECAPTCHA_PUBLIC_KEY"},
+  secret: {:system, "RECAPTCHA_PRIVATE_KEY"}

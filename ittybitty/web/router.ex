@@ -17,7 +17,7 @@ defmodule Ittybitty.Router do
     pipe_through :browser # Use the default browser stack
 
     get "/", PageController, :index
-    #get "newbit", BitController, :verify
+    post "newbit", BitController, :verify
     get "newbit", BitController, :new
   end
 
