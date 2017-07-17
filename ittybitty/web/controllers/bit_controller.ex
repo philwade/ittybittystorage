@@ -1,6 +1,7 @@
 defmodule Ittybitty.BitController do
   use Ittybitty.Web, :controller
   alias Ittybitty.Bit
+  @recaptcha_api Application.get_env(:ittybitty, :recaptcha_api)
 
   def show(conn, %{"id" => id}) do
     case Ittybitty.Store.get_key(id) do
@@ -23,14 +24,14 @@ defmodule Ittybitty.BitController do
   end
 
   def verify(conn, params) do
-    case Recaptcha.verify(params["g-recaptcha-response"]) do
+    case @recaptcha_api.verify(params["g-recaptcha-response"]) do
       {:ok, _} ->
         changeset = Bit.changeset(%Bit{})
         case Repo.insert(changeset) do
           {:ok, bit} ->
             key = bit.id
             create_key(key, conn)
-          {:error, changeset} ->
+          {:error, _changeset} ->
             put_status(conn, 500)
             |> render(Ittybitty.ErrorView, "500.html")
         end

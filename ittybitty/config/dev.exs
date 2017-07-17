@@ -46,3 +46,6 @@ config :ittybitty, Ittybitty.Repo,
 config :recaptcha,
   public_key: System.get_env("RECAPTCHA_PUBLIC_KEY"),
   secret: System.get_env("RECAPTCHA_PRIVATE_KEY")
+
+
+config :ittybitty, :recaptcha_api, Recaptcha

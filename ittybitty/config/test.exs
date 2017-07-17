@@ -17,3 +17,5 @@ config :ittybitty, Ittybitty.Repo,
   database: "ittybitty_test",
   hostname: "localhost",
   pool: Ecto.Adapters.SQL.Sandbox
+
+config :ittybitty, :recaptcha_api, Ittybitty.StubRecaptcha

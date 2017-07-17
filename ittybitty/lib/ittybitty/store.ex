@@ -28,8 +28,4 @@ defmodule Ittybitty.Store do
   def create_key(key) do
     Redix.pipeline(:redix, [["SETBIT", key, @setbit, 1], ["SETBIT", key, @valuebit, 1]])
   end
-
-  def generate_key do
-    UUID.uuid4()
-  end
 end
