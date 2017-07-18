@@ -15,6 +15,7 @@ defmodule Ittybitty do
       # Start your own worker by calling: Ittybitty.Worker.start_link(arg1, arg2, arg3)
       # worker(Ittybitty.Worker, [arg1, arg2, arg3]),
       worker(Redix, [[], [name: :redix]]),
+      worker(Task.Supervisor, [[name: Ittybitty.DbSupervisor]]),
     ]
 
     # See http://elixir-lang.org/docs/stable/elixir/Supervisor.html
