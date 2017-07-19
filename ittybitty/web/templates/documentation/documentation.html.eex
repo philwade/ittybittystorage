@@ -1,5 +1,160 @@
 <div class="main-layout">
   <div class="content">
+    <h2>How to use your bit</h2>
+    <p>So you've got a bit and you want to use it, huh? Luckily, the API is currently super small and simple.</p>
+    <p>Right now there are two endpoints, GET and PUT.</p>
+    <table>
+      <tr>
+        <td>
+          Name
+        </td>
+        <td>
+          Get bit
+        </td>
+      </tr>
+      <tr>
+        <td>
+          URL
+        </td>
+        <td class="pre">
+          /api/bit/&lt;bit id&gt;
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Method
+        </td>
+        <td class="pre">
+          GET
+        </td>
+      </tr>
+      <tr>
+        <td>
+          URL Parameters
+        </td>
+        <td>
+          None!
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Success response
+        </td>
+        <td>
+          Code: 200
+          <code>
+          {
+              "value": 1
+          }
+          </code>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Error response
+        </td>
+        <td>
+          Code: 404
+          <code>
+            {
+              "error": "not found"
+            }
+          </code>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Sample call
+        </td>
+        <td>
+          <code>
+            $ curl http://localhost:4000/api/bit/c3718664-a5c7-49d4-9ed7-00c3fb21b92
+            <br/>
+            {"value":0}
+          </code>
+        </td>
+      </tr>
+    </table>
+    <table>
+      <tr>
+        <td>
+          Name
+        </td>
+        <td>
+          Update bit
+        </td>
+      </tr>
+      <tr>
+        <td>
+          URL
+        </td>
+        <td class="pre">
+          /api/bit/&lt;bit id&gt;
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Method
+        </td>
+        <td>
+          PUT
+        </td>
+      </tr>
+      <tr>
+        <td>
+          URL Parameters
+        </td>
+        <td class="pre">
+          ?value=&lt;0 or 1&gt;
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Success response
+        </td>
+        <td>
+          Code: 200
+          <code>
+          {
+              "value": 1
+          }
+          </code>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Error responses
+        </td>
+        <td>
+          Code: 404
+          <code>
+            {
+              "error": "not found"
+            }
+          </code>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Sample call
+        </td>
+        <td>
+          <code>
+            $ curl -X PUT -d value=1 http://localhost:4000/api/bit/c3718664-a5c7-49d4-9ed7-00c3fb21b92
+            <br/>
+            {"value":0}
+          </code>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Notes
+        </td>
+        <td>
+          The response from an update is actually the *previous* value of the bit
+        </td>
+      </tr>
+    </table>
   </div>
   <%= render Ittybitty.SharedView, "bitcount.html" %>
 </div>
