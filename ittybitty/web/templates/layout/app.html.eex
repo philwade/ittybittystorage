@@ -18,8 +18,8 @@
       <header class="header">
         <nav role="navigation">
           <ul class="nav">
-            <li>Documentation</li>
-            <li>About</li>
+            <li><a href="/documentation">Documentation</a></li>
+            <li><a href="/about">About</a></li>
           </ul>
         </nav>
       </header>

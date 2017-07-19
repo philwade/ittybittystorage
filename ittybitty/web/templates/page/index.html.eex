@@ -8,7 +8,7 @@
     <div class="action">
       <a class="button" alt="request a bit" href="/newbit"><i class="fa fa-hand-o-up" aria-hidden="true"></i>I want my bit!</a>
     </div>
-    <div class="action">
+    <div class="action home-doc">
       <a class="button" alt="bit documentaion" href="/documentation"><i class="fa fa-info-circle" aria-hidden="true"></i>I need some documentation on using my bit!</a>
     </div>
   </div>
