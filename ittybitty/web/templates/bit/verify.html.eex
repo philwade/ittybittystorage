@@ -5,8 +5,8 @@
     <code>
     <%= @key %>
     </code>
-    <p>You can read your bit with a GET request to <i class="pre">/api/bit/<%= @key %></i>, and update its value with a PUT request.</p>
-    <p>Please note there is <b>no security</b> around updating this bit, so please keep the value secret if that is important to your usage. If accounts/locking/access control are things that you would like to see, please let me know over at the <a href="/contact">contact</a> page.</p>
+    <p>You can read your bit with a GET request to <i class="pre">/api/bit/<%= @key %></i>, and update its value with a PUT request and a value parameter <i class="pre">/api/bit/<%= @key %>?value=1</i>.</p>
+    <p>Please note there is <b>no security</b> around updating this bit, so please keep the value secret if that is important to your usage. If accounts/locking/access control are things that you would like to see, please let me know. Contact info is over at the <a href="/about">about</a> page.</p>
     <p>For more details on how to use your bit, please review the <a href="/documentation">documentation</a>.</p>
   </div>
   <%= render Ittybitty.SharedView, "bitcount.html" %>
