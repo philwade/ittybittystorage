@@ -90,8 +90,9 @@ code {
 	background-color: $color-header;
 	color: $color-link;
 	height: 100%;
-	margin: 0;
 	list-style: none;
+	margin: 0;
+	padding-left: 0;
 
 	li {
 		float: right;
@@ -100,6 +101,13 @@ code {
 		a {
 			text-decoration: none;
 		}
+	}
+
+	a.logo {
+		float: left;
+		font-size: 30px;
+		text-decoration: none;
+		margin: 10px;
 	}
 }
  nav {

@@ -18,6 +18,7 @@
       <header class="header">
         <nav role="navigation">
           <ul class="nav">
+            <a href="/" class="logo">Ittybitty Storage</a>
             <li><a href="/documentation">Documentation</a></li>
             <li><a href="/about">About</a></li>
           </ul>

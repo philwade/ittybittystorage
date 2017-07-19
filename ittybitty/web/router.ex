@@ -19,6 +19,8 @@ defmodule Ittybitty.Router do
     get "/", PageController, :index
     post "/newbit", BitController, :verify
     get "/newbit", BitController, :new
+    get "/documentation", DocumentationController, :documentation
+    get "/about", DocumentationController, :about
   end
 
   # Other scopes may use custom stacks.

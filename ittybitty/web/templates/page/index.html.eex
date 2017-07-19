@@ -12,9 +12,5 @@
       <a class="button" alt="bit documentaion" href="/documentation"><i class="fa fa-info-circle" aria-hidden="true"></i>I need some documentation on using my bit!</a>
     </div>
   </div>
-  <div class="sidebar">
-    <div class="counter">
-      Current bits: 100
-    </div>
-  </div>
+  <%= render Ittybitty.SharedView, "bitcount.html" %>
 </div>

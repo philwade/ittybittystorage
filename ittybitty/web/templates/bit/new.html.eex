@@ -13,4 +13,5 @@
       <input class="button" type="submit" value="Ok, let's go">
     </form>
   </div>
+  <%= render Ittybitty.SharedView, "bitcount.html" %>
 </div>

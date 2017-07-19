@@ -1,0 +1,5 @@
+<div class="main-layout">
+  <div class="content">
+  </div>
+  <%= render Ittybitty.SharedView, "bitcount.html" %>
+</div>
