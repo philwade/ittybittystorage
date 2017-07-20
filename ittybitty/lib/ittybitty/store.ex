@@ -14,10 +14,24 @@ defmodule Ittybitty.Store do
   end
 
   def update_key(key, value, redis \\ Redix) do
-    case redis.command(:redix, ["GETBIT", key, @setbit]) do
-      {:ok, 1} -> update_key_value(key, value, redis)
-      {:ok, 0} -> {:notfound}
-      {:error, msg} -> {:error, msg}
+    unless valid_value(value) do
+      {:invalid}
+    else
+      case redis.command(:redix, ["GETBIT", key, @setbit]) do
+        {:ok, 1} -> update_key_value(key, value, redis)
+        {:ok, 0} -> {:notfound}
+        {:error, msg} -> {:error, msg}
+      end
+    end
+  end
+
+  def valid_value(val) do
+    case val do
+      1 -> true
+      0 -> true
+      "1" -> true
+      "0" -> true
+      _ -> false
     end
   end
 

@@ -20,6 +20,11 @@ defmodule Ittybitty.BitControllerTest do
     conn = put conn, "/api/bit/notarealbit", %{"value" => 1}
     assert json_response(conn, 404) == %{"error" => "not found"}
   end
+
+  test "PUT /api/bit invalid", %{conn: conn} do
+    conn = put conn, "/api/bit/notarealbit", %{"value" => 10}
+    assert json_response(conn, 403) == %{"error" => "invalid input"}
+  end
 end
 
 defmodule Ittybitty.StubRecaptcha do

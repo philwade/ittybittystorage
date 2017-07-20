@@ -18,6 +18,9 @@ defmodule Ittybitty.BitController do
       {:notfound} ->
         put_status(conn, 404)
         |> render(Ittybitty.ErrorView, "404.json")
+      {:invalid} ->
+        put_status(conn, 403)
+        |> render(Ittybitty.ErrorView, "403.json")
       {:ok, val} ->
         Task.Supervisor.start_child(Ittybitty.DbSupervisor, fn -> Ittybitty.AsyncDB.update_key(key) end)
         json conn, %{value: val}

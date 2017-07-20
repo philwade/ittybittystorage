@@ -4,7 +4,7 @@ defmodule Ittybitty.AsyncDBTest do
   alias Ittybitty.Repo
   alias Ittybitty.Bit
 
-  def get_key_mock(key) do
+  def get_key_mock(_key) do
     {:ok, 1}
   end
 

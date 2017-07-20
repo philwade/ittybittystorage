@@ -54,5 +54,9 @@ defmodule Ittybitty.StoreTest do
   test "update_key error" do
     assert Ittybitty.Store.update_key("error", 1, RedisMock) == {:error, "error"}
   end
+
+  test "invalid_key error" do
+    assert Ittybitty.Store.update_key("invalid", 10) == {:invalid}
+  end
 end
 
