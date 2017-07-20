@@ -110,14 +110,34 @@ code {
 		margin: 10px;
 	}
 }
- nav {
- 	height: 64px;
- }
 
- .home-doc {
- 	@media (max-width: 768px) {
+nav {
+	height: 64px;
+}
+
+.home-doc {
+	@media (max-width: 768px) {
 		.button {
 			font-size: 11px;
 		}
 	}
- }
+}
+
+.api-doc {
+	font-family: monospace;
+	background-color: rgba(255,255,255,.95);
+	color: $color-api;
+	margin-bottom: 30px;
+
+	th {
+		color: #fff;
+		background-color: $color-api-header;
+		font-size: 20px;
+	}
+
+	tr {
+		td:first-child {
+			background-color: $color-api-secondary;
+		}
+	}
+}

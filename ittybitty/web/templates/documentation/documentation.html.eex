@@ -3,20 +3,17 @@
     <h2>How to use your bit</h2>
     <p>So you've got a bit and you want to use it, huh? Luckily, the API is currently super small and simple.</p>
     <p>Right now there are two endpoints, GET and PUT.</p>
-    <table>
+    <table class="api-doc">
       <tr>
-        <td>
-          Name
-        </td>
-        <td>
-          Get bit
-        </td>
+        <th colspan="2">
+          Retrieve bit
+        </th>
       </tr>
       <tr>
         <td>
           URL
         </td>
-        <td class="pre">
+        <td>
           /api/bit/&lt;bit id&gt;
         </td>
       </tr>
@@ -24,7 +21,7 @@
         <td>
           Method
         </td>
-        <td class="pre">
+        <td>
           GET
         </td>
       </tr>
@@ -42,11 +39,9 @@
         </td>
         <td>
           Code: 200
-          <code>
           {
               "value": 1
           }
-          </code>
         </td>
       </tr>
       <tr>
@@ -55,11 +50,9 @@
         </td>
         <td>
           Code: 404
-          <code>
             {
               "error": "not found"
             }
-          </code>
         </td>
       </tr>
       <tr>
@@ -67,28 +60,23 @@
           Sample call
         </td>
         <td>
-          <code>
             $ curl http://localhost:4000/api/bit/c3718664-a5c7-49d4-9ed7-00c3fb21b92
             <br/>
             {"value":0}
-          </code>
         </td>
       </tr>
     </table>
-    <table>
+    <table class="api-doc">
       <tr>
-        <td>
-          Name
-        </td>
-        <td>
+        <th colspan="2">
           Update bit
-        </td>
+        </th>
       </tr>
       <tr>
         <td>
           URL
         </td>
-        <td class="pre">
+        <td>
           /api/bit/&lt;bit id&gt;
         </td>
       </tr>
@@ -104,7 +92,7 @@
         <td>
           URL Parameters
         </td>
-        <td class="pre">
+        <td>
           ?value=&lt;0 or 1&gt;
         </td>
       </tr>
@@ -114,11 +102,9 @@
         </td>
         <td>
           Code: 200
-          <code>
           {
               "value": 1
           }
-          </code>
         </td>
       </tr>
       <tr>
@@ -127,11 +113,14 @@
         </td>
         <td>
           Code: 404
-          <code>
             {
               "error": "not found"
             }
-          </code>
+          <br/>
+          Code: 403
+            {
+              "error": "invalid input"
+            }
         </td>
       </tr>
       <tr>
@@ -139,11 +128,9 @@
           Sample call
         </td>
         <td>
-          <code>
             $ curl -X PUT -d value=1 http://localhost:4000/api/bit/c3718664-a5c7-49d4-9ed7-00c3fb21b92
             <br/>
             {"value":0}
-          </code>
         </td>
       </tr>
       <tr>
