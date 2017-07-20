@@ -1,5 +1,9 @@
 <div class="main-layout">
   <div class="content">
+    <h3>About</h3>
+    <p>My name is Phil, and I wrote Itty bitty storage for fun and to learn Elixir. I like making stuff that's sort of silly. I hope you enjoy using it,
+    if you'd like to get in touch you can email me: phil [at] philwade.org, or you can find me on <a href="http://twitter.com/phil_wade" alt="twitter account">twitter</a>.</p>
+    <p>If you have any issues, or are just curious, the code that runs the site is on <a href="https://github.com/philwade/ittybittystorage" alt="itty bitty storage github repository">github</a>. Please open an issue for any problems, or better yet, open a pull request 🙃</p>
   </div>
   <%= render Ittybitty.SharedView, "bitcount.html" %>
 </div>
