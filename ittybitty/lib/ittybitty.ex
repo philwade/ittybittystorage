@@ -6,6 +6,8 @@ defmodule Ittybitty do
   def start(_type, _args) do
     import Supervisor.Spec
 
+    redis_uri = System.get_env("REDIS_URI")
+
     # Define workers and child supervisors to be supervised
     children = [
       # Start the Ecto repository
@@ -14,7 +16,7 @@ defmodule Ittybitty do
       supervisor(Ittybitty.Endpoint, []),
       # Start your own worker by calling: Ittybitty.Worker.start_link(arg1, arg2, arg3)
       # worker(Ittybitty.Worker, [arg1, arg2, arg3]),
-      worker(Redix, [[], [name: :redix]]),
+      worker(Redix, [redis_uri, [name: :redix]]),
       worker(Task.Supervisor, [[name: Ittybitty.DbSupervisor]]),
     ]
 
