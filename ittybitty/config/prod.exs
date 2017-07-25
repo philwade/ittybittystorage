@@ -56,10 +56,6 @@ config :logger, level: :info
 #     config :ittybitty, Ittybitty.Endpoint, server: true
 #
 
-# Finally import the config/prod.secret.exs
-# which should be versioned separately.
-import_config "prod.secret.exs"
-
 # configure recaptcha
 config :recaptcha,
   public_key: System.get_env("RECAPTCHA_PUBLIC_KEY"),
@@ -67,3 +63,8 @@ config :recaptcha,
 
 
 config :ittybitty, :recaptcha_api, Recaptcha
+
+# Finally import the config/prod.secret.exs
+# which should be versioned separately.
+import_config "prod.secret.exs"
+

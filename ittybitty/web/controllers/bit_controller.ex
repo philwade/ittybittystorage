@@ -30,7 +30,7 @@ defmodule Ittybitty.BitController do
   def verify(conn, params) do
     case @recaptcha_api.verify(params["g-recaptcha-response"]) do
       {:ok, _} ->
-        changeset = Bit.changeset(%Bit{})
+        changeset = Bit.changeset(%Bit{ value: true })
         case Repo.insert(changeset) do
           {:ok, bit} ->
             key = bit.id

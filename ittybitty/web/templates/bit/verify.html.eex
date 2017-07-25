@@ -1,7 +1,7 @@
 <div class="main-layout">
   <div class="content">
     <h3>Here you go!</h3>
-    <p>This is the key to your bit. It has been initialized to the value <i class="pre">0</i>.</p>
+    <p>This is the key to your bit. It has been initialized to the value <i class="pre">1</i>.</p>
     <code>
     <%= @key %>
     </code>
