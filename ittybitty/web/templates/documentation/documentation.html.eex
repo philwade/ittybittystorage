@@ -60,7 +60,7 @@
           Sample call
         </td>
         <td>
-            $ curl http://localhost:4000/api/bit/c3718664-a5c7-49d4-9ed7-00c3fb21b92
+            $ curl http://ittybitty.philwade.org/api/bit/c3718664-a5c7-49d4-9ed7-00c3fb21b92
             <br/>
             {"value":0}
         </td>
@@ -128,7 +128,7 @@
           Sample call
         </td>
         <td>
-            $ curl -X PUT -d value=1 http://localhost:4000/api/bit/c3718664-a5c7-49d4-9ed7-00c3fb21b92
+            $ curl -X PUT -d value=1 http://ittybitty.philwade.org/api/bit/c3718664-a5c7-49d4-9ed7-00c3fb21b92
             <br/>
             {"value":0}
         </td>
