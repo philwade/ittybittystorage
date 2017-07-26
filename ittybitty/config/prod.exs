@@ -17,7 +17,14 @@ config :ittybitty, Ittybitty.Endpoint,
   cache_static_manifest: "priv/static/manifest.json"
 
 # Do not print debug messages in production
-config :logger, level: :info
+config :logger,
+  level: :info,
+  backends: [{LoggerFileBackend, :error_log}, :console]
+
+# Special file error logging for prod
+config :logger, :error_log,
+  path: "/home/pwade/logs/frontend/ittybitty/error.log",
+  lelt: :error
 
 # ## SSL Support
 #

@@ -1,5 +1,5 @@
 <div class="sidebar">
   <div class="counter">
-    Current bits: <%= bit_count %>
+    Current bits: <%= bit_count() %>
   </div>
 </div>
