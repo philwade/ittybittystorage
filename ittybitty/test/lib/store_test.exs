@@ -14,6 +14,14 @@ defmodule Ittybitty.StoreTest do
       {:error}
     end
 
+    def pipeline(_, [["GETBIT", "ok", 0], ["GETBIT", "ok", 1]]) do
+      {:ok, [1, 1]}
+    end
+
+    def command(_, ["GETBIT", "ok", 0]) do
+      {:ok, 1}
+    end
+
     def command(_, ["GETBIT", "missing", 0]) do
       {:ok, 0}
     end
@@ -28,6 +36,16 @@ defmodule Ittybitty.StoreTest do
 
     def command(_, ["SETBIT", "success", 1, 1]) do
       {:ok, 1}
+    end
+
+    def command(_, ["SETBIT", "ok", 1, 1]) do
+      {:ok, 1}
+    end
+  end
+
+  defmodule RepoMock do
+    def all(_) do
+      [%{id: "ok", value: true}]
     end
   end
 
@@ -57,6 +75,10 @@ defmodule Ittybitty.StoreTest do
 
   test "invalid_key error" do
     assert Ittybitty.Store.update_key("invalid", 10) == {:invalid}
+  end
+
+  test "restore keys just updates" do
+    assert Ittybitty.Store.restore_keys(RedisMock, RepoMock) == [ok: 1]
   end
 end
 

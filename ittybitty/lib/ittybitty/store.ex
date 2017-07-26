@@ -1,4 +1,5 @@
 defmodule Ittybitty.Store do
+  alias Ittybitty.Bit
   @setbit 0
   @valuebit 1
 
@@ -35,11 +36,32 @@ defmodule Ittybitty.Store do
     end
   end
 
+  defp cast_value(val) do
+    case val do
+      true -> 1
+      false -> 0
+    end
+  end
+
   defp update_key_value(key, value, redis) do
     redis.command(:redix, ["SETBIT", key, @valuebit, value])
   end
 
   def create_key(key, redis \\ Redix) do
     redis.pipeline(:redix, [["SETBIT", key, @setbit, 1], ["SETBIT", key, @valuebit, 1]])
+  end
+
+  @doc "Restore keys to redis after a data loss"
+  def restore_keys(redis \\ Redix, repo \\ Ittybitty.Repo) do
+    Enum.map(repo.all(Bit), fn(%{ "id": id, "value": value}) ->
+      redis_value = cast_value(value)
+      case get_key(id, redis) do
+        {:notfound} ->
+          create_key(id, redis)
+          update_key(id, redis_value, redis)
+        {:ok, _} ->
+          update_key(id, redis_value, redis)
+      end
+    end)
   end
 end
