@@ -101,6 +101,11 @@ code {
 		a {
 			text-decoration: none;
 		}
+
+		@media only screen and (max-width: 768px) {
+			font-size: 15px;
+			padding: 5px;
+		}
 	}
 
 	a.logo {
@@ -108,6 +113,12 @@ code {
 		font-size: 30px;
 		text-decoration: none;
 		margin: 10px;
+
+		@media only screen and (max-width: 768px) {
+			font-size: 23px;
+			margin-top: 15px;
+		}
+
 	}
 }
 
