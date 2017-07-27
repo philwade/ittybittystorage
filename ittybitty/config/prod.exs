@@ -23,8 +23,8 @@ config :logger,
 
 # Special file error logging for prod
 config :logger, :error_log,
-  path: "/home/pwade/logs/frontend/ittybitty/error.log",
-  lelt: :error
+  path: "/home/pwade/logs/user/error_ittybitty.log",
+  level: :error
 
 # ## SSL Support
 #
