@@ -3,8 +3,11 @@ elixir:
   - 1.4.2
 services:
   - postgresql
+  - redis-server
 before_script:
   - psql -c 'create database ittybitty_dev_test;' -U postgres
 script: mix test
 before_install:
   - cd ittybitty
+env:
+  - REDIS_URI=redis://localhost:6379
