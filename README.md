@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/philwade/ittybittystorage.svg?branch=master)](https://travis-ci.org/philwade/ittybittystorage)
+
 This is the itty bitty service dev setup.
 
 Most of the environment should be managed by vagrant so to begin
