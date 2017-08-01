@@ -3,7 +3,7 @@ defmodule Ittybitty.Mixfile do
 
   def project do
     [app: :ittybitty,
-     version: "0.0.1",
+     version: "0.1.0",
      elixir: "~> 1.2",
      elixirc_paths: elixirc_paths(Mix.env),
      compilers: [:phoenix, :gettext] ++ Mix.compilers,
@@ -19,7 +19,7 @@ defmodule Ittybitty.Mixfile do
   def application do
     [mod: {Ittybitty, []},
      applications: [:phoenix, :phoenix_pubsub, :phoenix_html, :cowboy, :logger, :gettext,
-                    :phoenix_ecto, :postgrex, :redix, :recaptcha]]
+                    :phoenix_ecto, :postgrex, :redix, :recaptcha, :logger_file_backend]]
   end
 
   # Specifies which paths to compile per environment.
@@ -40,7 +40,8 @@ defmodule Ittybitty.Mixfile do
      {:cowboy, "~> 1.0"},
      {:redix, ">= 0.0.0"},
      {:recaptcha, "~> 2.0"},
-     {:logger_file_backend, "0.0.10"}]
+     {:logger_file_backend, "0.0.10"},
+     {:distillery, "~> 1.4", runtime: false}]
   end
 
   # Aliases are shortcuts or tasks specific to the current project.

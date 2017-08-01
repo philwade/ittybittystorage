@@ -14,7 +14,9 @@ use Mix.Config
 config :ittybitty, Ittybitty.Endpoint,
   http: [port: {:system, "PORT"}],
   url: [host: "ittybitty.philwade.org", port: 80],
-  cache_static_manifest: "priv/static/manifest.json"
+  cache_static_manifest: "priv/static/manifest.json",
+  code_reloader: false,
+  server: true
 
 # Do not print debug messages in production
 config :logger,
@@ -60,8 +62,7 @@ config :logger, :error_log,
 # Alternatively, you can configure exactly which server to
 # start per endpoint:
 #
-#     config :ittybitty, Ittybitty.Endpoint, server: true
-#
+#config :ittybitty, Ittybitty.Endpoint, server: true, code_reloader: false
 
 # configure recaptcha
 config :recaptcha,
