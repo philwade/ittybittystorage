@@ -41,11 +41,3 @@ config :ittybitty, Ittybitty.Repo,
   database: "ittybitty_dev",
   hostname: "localhost",
   pool_size: 10
-
-# configure recaptcha
-config :recaptcha,
-  public_key: System.get_env("RECAPTCHA_PUBLIC_KEY"),
-  secret: System.get_env("RECAPTCHA_PRIVATE_KEY")
-
-
-config :ittybitty, :recaptcha_api, Recaptcha

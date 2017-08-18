@@ -6,7 +6,7 @@ defmodule Ittybitty do
   def start(_type, _args) do
     import Supervisor.Spec
 
-    redis_uri = System.get_env("REDIS_URI")
+    redis_uri = Application.fetch_env!(:ittybitty, :redis_uri)
 
     # Define workers and child supervisors to be supervised
     children = [
