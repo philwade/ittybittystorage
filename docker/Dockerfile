@@ -68,10 +68,19 @@ RUN set -xe \
     && mix local.hex --force \
 	&& mix hex.info
 
+# Install Node.js
+RUN curl --silent --location https://rpm.nodesource.com/setup_6.x | bash -
+RUN yum -y install nodejs
+
+# Install Yarn
+RUN npm install -g yarn
+
 ENV MIX_ENV prod
 ADD /ittybitty /ittybitty
 WORKDIR ittybitty
 
 RUN mix deps.get
+RUN yarn
+RUN node node_modules/brunch/bin/brunch build --production
 
 CMD ["bash"]
