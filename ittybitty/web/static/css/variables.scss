@@ -1,12 +1,3 @@
-$color-primary: #ef9a9a;
-$color-background: #ffebee;
-$color-dark: #c62828;
-$font-main: 'Raleway', sans-serif;
-$color-link: #b71c1c;
-$color-header: #ffcdd2;
-$color-api: #212121;
-$color-api-header: #78909c;
-$color-api-secondary: #d3d7da;
 
 //	Color Adjustments
 //	==========================================================================
@@ -77,3 +68,12 @@ $colors: (
 	}
 }
 
+$color-primary: $color-red;
+$color-background: $color-red-lightest;
+$color-dark: $color-red-dark;
+$font-main: 'Raleway', sans-serif;
+$color-link: #fff;
+$color-header: $color-red-lighter;
+$color-api: #212121;
+$color-api-header: #78909c;
+$color-api-secondary: #d3d7da;
