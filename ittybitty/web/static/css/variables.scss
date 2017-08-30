@@ -7,3 +7,73 @@ $color-header: #ffcdd2;
 $color-api: #212121;
 $color-api-header: #78909c;
 $color-api-secondary: #d3d7da;
+
+//	Color Adjustments
+//	==========================================================================
+
+//
+//	Tint
+//
+
+@function tint($color, $percentage) {
+	@return mix(white, $color, $percentage);
+}
+
+
+//
+//	Shade
+//
+
+@function shade($color, $percentage) {
+	@return mix(black, $color, $percentage);
+}
+
+
+//	Standard Color Palette
+//	==========================================================================
+
+$color-black:			#000000;
+$color-white:			#ffffff;
+
+$color-red:				#c62828;
+$color-red-darkest:		shade($color-red, 90%) !default;
+$color-red-darker:		shade($color-red, 60%) !default;
+$color-red-dark:		shade($color-red, 30%) !default;
+$color-red-light:		tint($color-red, 30%) !default;
+$color-red-lighter:		tint($color-red, 60%) !default;
+$color-red-lightest:	tint($color-red, 90%) !default;
+
+$colors: (
+	$color-black 'black',
+	$color-white 'white',
+	$color-red 'red',
+	$color-red-darkest 'red-darkest',
+	$color-red-darker 'red-darker',
+	$color-red-dark 'red-dark',
+	$color-red-light 'red-light',
+	$color-red-lighter 'red-lighter',
+	$color-red-lightest 'red-lightest',
+);
+
+
+//
+//	Text
+//
+
+@each $text-color in $colors {
+	.text-#{nth($text-color, 2)} {
+		color: nth($text-color, 1);
+	}
+}
+
+
+//
+//	Backgrounds
+//
+
+@each $background-color in $colors {
+	.bg-#{nth($background-color, 2)} {
+		background-color: nth($background-color, 1);
+	}
+}
+
