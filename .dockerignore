@@ -1,0 +1,12 @@
+.git
+_build
+deps
+*.ez
+.log
+
+releases
+node_modules
+ittybitty/node_modules
+priv
+
+docs
