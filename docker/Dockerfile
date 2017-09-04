@@ -91,5 +91,6 @@ WORKDIR ittybitty
 RUN mix deps.get
 RUN yarn
 RUN node node_modules/brunch/bin/brunch build --production
+RUN mix phoenix.digest
 
 CMD ["bash"]
