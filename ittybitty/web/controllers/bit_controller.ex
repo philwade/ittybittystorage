@@ -14,6 +14,11 @@ defmodule Ittybitty.BitController do
     end
   end
 
+  def update(conn, %{"id" => _}) do
+    put_status(conn, 403)
+    |> render(Ittybitty.ErrorView, "403.json")
+  end
+
   def update(conn, %{"id" => key, "value" => value}) do
     case Ittybitty.Store.update_key(key, value) do
       {:notfound} ->
