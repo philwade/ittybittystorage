@@ -14,11 +14,6 @@ defmodule Ittybitty.BitController do
     end
   end
 
-  def update(conn, %{"id" => _}) do
-    put_status(conn, 403)
-    |> render(Ittybitty.ErrorView, "403.json")
-  end
-
   def update(conn, %{"id" => key, "value" => value}) do
     case Ittybitty.Store.update_key(key, value) do
       {:notfound} ->
@@ -32,6 +27,12 @@ defmodule Ittybitty.BitController do
         json conn, %{value: val}
     end
   end
+
+  def update(conn, %{"id" => _}) do
+    put_status(conn, 403)
+    |> render(Ittybitty.ErrorView, "403.json")
+  end
+
 
   def verify(conn, params) do
     case @recaptcha_api.verify(params["g-recaptcha-response"]) do
