@@ -138,7 +138,7 @@
           Notes
         </td>
         <td>
-          The response from an update is actually the *previous* value of the bit
+          The response from an update is the new value of the bit
         </td>
       </tr>
     </table>

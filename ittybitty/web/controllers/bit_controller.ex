@@ -24,7 +24,7 @@ defmodule Ittybitty.BitController do
         |> render(Ittybitty.ErrorView, "403.json")
       {:ok, val} ->
         Task.Supervisor.start_child(Ittybitty.DbSupervisor, fn -> Ittybitty.AsyncDB.update_key(key) end)
-        json conn, %{value: val}
+        json conn, %{value: value}
     end
   end
 
